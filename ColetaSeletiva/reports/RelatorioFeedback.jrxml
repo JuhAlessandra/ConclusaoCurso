@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RelatorioFeedback" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c470ad5b-e09c-4d58-86c2-4fb509f5b610">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="9"/>
+	<parameter name="feedback_id" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select * from feedback_vw where feedback_id = $P{feedback_id}]]>
+	</queryString>
+	<field name="usuario_id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="usuario_nome" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="feedback_id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="feedback_qualificacao" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="feedback_data" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="feedback_critica" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="feedback_status" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="feedback_resposta" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="60" splitType="Stretch">
+			<staticText>
+				<reportElement x="76" y="0" width="95" height="20" uuid="41cd4646-f564-4048-9861-8e39fd7412ad"/>
+				<textElement>
+					<font fontName="Arial Black" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID FEEDBACK]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="199" y="0" width="98" height="20" uuid="145d4950-5dfa-45a3-bcd6-e0647ee7ba32"/>
+				<textElement>
+					<font fontName="Arial Black" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{feedback_id}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="455" y="0" width="100" height="20" uuid="5d13d693-a0b1-45c3-9c2c-cab4c8ce296f"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="0" y="0" width="50" height="36" uuid="d0a24e62-19d8-457f-af48-8579ce07869d"/>
+				<imageExpression><![CDATA["C:\\Users\\julya\\OneDrive\\Área de Trabalho\\icons8-vaso-de-planta-30.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20" uuid="80f24f35-841a-4731-bb1e-f88c0d1e38bd"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nome Usuário]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="114" y="0" width="100" height="20" uuid="3a62d162-2aef-46e9-8c9f-61dc778bfe0e"/>
+				<textFieldExpression><![CDATA[$F{usuario_nome}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="226" y="0" width="100" height="20" uuid="4a47b6fd-58ed-486b-8b41-3d550f69a08c"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data Comentário]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="344" y="0" width="100" height="20" uuid="2595cd70-5c9e-4f61-b72c-732668450ed2"/>
+				<textFieldExpression><![CDATA[$F{feedback_data}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="41" width="100" height="20" uuid="07b68baf-fa06-4d10-89fc-07b775b81162"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Pontuação]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="114" y="41" width="42" height="20" uuid="8042d39d-23b2-4359-8730-0fdad29f6d2b"/>
+				<textFieldExpression><![CDATA[$F{feedback_qualificacao}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="199" y="41" width="100" height="20" uuid="1aba4fc1-f341-441b-a7ad-29e1e0c691d6"/>
+				<text><![CDATA[Comentário]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="326" y="41" width="211" height="20" uuid="2f6a8e5e-65b8-4cd9-90e1-fcc85865c4fa"/>
+				<textFieldExpression><![CDATA[$F{feedback_critica}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="455" y="34" width="100" height="20" uuid="406021af-6c9d-4af0-abd7-98e963fe3934"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

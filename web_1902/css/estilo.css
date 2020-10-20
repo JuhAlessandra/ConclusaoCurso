@@ -1,0 +1,76 @@
+@charset "UTF-8";
+
+div#interface{
+    position: center;
+    width: auto;
+    background-color: #f8f9fa;
+    padding: 20px;
+    margin: 0 auto 0 auto;   
+}
+div#menu{
+    position: relative;
+    align-content: right;
+    padding: 5px;
+    margin: 0 auto 0 auto;
+}
+
+a#menu{
+    color: #f9f8fa; 
+}
+header#cabecalho{
+    padding: 0px;
+}
+
+hgroup#divisor{
+    padding: 5px;
+    margin: auto;
+    border-bottom: 1px #606060 solid;
+   }
+
+table#estats{
+    text-align: center;
+}
+footer{
+    text-align: center;
+}
+
+table#estats tr:hover{
+    background-color: #606060;
+    color: #fff;
+    text-align: center;
+    }
+form#cadastro{
+    padding: 50px;
+}
+a#login{
+color: #28a745;
+  text-decoration: none;
+  background-color: transparent;
+-webkit-text-decoration-skip: objects;
+}
+a#login:hover {
+  color: #28a775;
+}
+img#imagem{
+    width: auto;
+    position: center;
+}
+div#nomeExib{
+    text-align: right;
+}
+.estrelas input[type=radio]{
+    display: none;
+}
+.estrelas label i.fa:before{
+    content: '\f005';
+    color: #fc0;
+}
+.estrelas input[type=radio]:checked ~ label i.fa:before {
+    color: #CCC;
+}
+button#sair{
+    text-align: right;
+}
+.nav-item#alinhamento{
+    float: right;
+}

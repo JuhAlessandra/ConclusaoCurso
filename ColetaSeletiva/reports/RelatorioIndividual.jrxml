@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RelatorioIndividual" language="groovy" pageWidth="800" pageHeight="500" orientation="Landscape" columnWidth="760" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d27f3916-4030-49af-9a44-00a589235e2d">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="solicitacao_id" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select * from solicitacao_vw_sol where solicitacao_id = $P{solicitacao_id}]]>
+	</queryString>
+	<field name="usuario_id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="usuario_nome" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="solicitacao_id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="solicitacao_data" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="solicitacao_descricao" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="solicitacao_tiporesiduo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="endereco_logradouro" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="endereco_numero" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="endereco_bairro" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="endereco_municipio" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="endereco_cep" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telefone_celular" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="143" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="44" height="40" uuid="79906deb-21fa-4a82-879e-8d369d11c227"/>
+				<imageExpression><![CDATA["C:\\Users\\julya\\OneDrive\\Área de Trabalho\\icons8-vaso-de-planta-30.png"]]></imageExpression>
+			</image>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="658" y="0" width="100" height="20" uuid="fa4af551-7969-4dbe-a3de-689fc3c7519b"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="62" y="0" width="100" height="20" uuid="a499abf1-87a6-4973-9b19-06adfe4b9972"/>
+				<textElement>
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nº Solicitação]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="173" y="0" width="35" height="20" uuid="95a03c4f-e3c3-4567-9196-0396d8e75eae"/>
+				<textFieldExpression><![CDATA[$F{solicitacao_id}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="2" y="80" width="74" height="20" uuid="b3bc8f17-b5ed-4749-a94d-f18ed58e7317"/>
+				<text><![CDATA[Código Usuário]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="86" y="80" width="42" height="20" uuid="cf0ccdf2-bf78-4d34-ba4f-63d234ed763c"/>
+				<textFieldExpression><![CDATA[$F{usuario_id}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="198" y="80" width="100" height="20" uuid="8c8cfd77-5fdc-4d41-b811-e50b5e5b7249"/>
+				<text><![CDATA[Nome do Solicitante]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="308" y="80" width="148" height="20" uuid="da8f8cb7-70a3-43ad-ad8c-6d788a207b36"/>
+				<textFieldExpression><![CDATA[$F{usuario_nome}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="73" y="39" width="179" height="20" uuid="fee8e067-27e7-4d9d-8930-292b8758dfd5"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DADOS DO SOLICITANTE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="522" y="80" width="100" height="20" uuid="55459f09-1fca-4762-ba62-22ce1b95ce3c"/>
+				<text><![CDATA[Telefone Contato]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="622" y="80" width="100" height="20" uuid="08530c7b-39aa-48ba-a97b-5932337761e0"/>
+				<textFieldExpression><![CDATA[$F{telefone_celular}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="227" splitType="Stretch">
+			<staticText>
+				<reportElement x="2" y="73" width="42" height="20" uuid="0a64c019-f88e-4023-a87e-20701572e83f"/>
+				<text><![CDATA[Rua]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="62" y="73" width="100" height="20" uuid="d8d082cb-1c76-45be-baee-644491daa3dd"/>
+				<textFieldExpression><![CDATA[$F{endereco_logradouro}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="73" y="26" width="162" height="20" uuid="32466b37-0583-4fb3-a979-82cfdf62d078"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ENDEREÇO DA COLETA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="187" y="73" width="48" height="20" uuid="448fa013-65c5-4299-b6e8-c6120637b8d6"/>
+				<text><![CDATA[Número]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="235" y="73" width="29" height="20" uuid="ec66a6ca-a852-4167-aa8a-4aa93e189a43"/>
+				<textFieldExpression><![CDATA[$F{endereco_numero}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="298" y="73" width="31" height="20" uuid="57a68462-6cc8-417d-b9b2-d7058e2a3ee1"/>
+				<text><![CDATA[Bairro]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="327" y="73" width="100" height="20" uuid="97ef236b-b7e3-44b1-88cb-ad905430b369"/>
+				<textFieldExpression><![CDATA[$F{endereco_bairro}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="463" y="73" width="22" height="20" uuid="64678589-06c3-4955-9cff-a241dc709260"/>
+				<text><![CDATA[Cep]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="485" y="73" width="93" height="20" uuid="05075df8-cf14-4fcd-8a80-1000b2ea0683"/>
+				<textFieldExpression><![CDATA[$F{endereco_cep}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="605" y="73" width="40" height="20" uuid="e96b8c92-e834-434d-b3a1-c1912993c5a6"/>
+				<text><![CDATA[Cidade]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="658" y="73" width="61" height="20" uuid="ead531dd-d2c1-427d-bcac-170059128de5"/>
+				<textFieldExpression><![CDATA[$F{endereco_municipio}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="4" y="207" width="69" height="20" uuid="82a6c091-13c4-4e7a-bfa2-01f63a3e95c4"/>
+				<text><![CDATA[Data Coleta]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="86" y="207" width="76" height="20" uuid="f4869b28-acb3-465a-8f97-96c4b6898b1a"/>
+				<textFieldExpression><![CDATA[$F{solicitacao_data}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="73" y="151" width="162" height="20" uuid="0b3d2d90-7ff2-4c4d-9973-46813ef0e80b"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DADOS DA COLETA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="460" y="207" width="100" height="20" uuid="8047e399-53ce-4089-a0d6-b0427761e015"/>
+				<text><![CDATA[Descrição da Coleta]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="566" y="207" width="196" height="20" uuid="18a11366-f224-41e6-8f1b-bf21476aad55"/>
+				<textFieldExpression><![CDATA[$F{solicitacao_descricao}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="208" y="207" width="72" height="20" uuid="d9222234-67a5-4cbc-9b54-124ed799fa5e"/>
+				<text><![CDATA[Tipo Resíduo]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="298" y="207" width="100" height="20" uuid="1a8c3b6b-ba89-4d6d-b1ae-4bbf9b15f1e2"/>
+				<textFieldExpression><![CDATA[$F{solicitacao_tiporesiduo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

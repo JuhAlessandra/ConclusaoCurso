@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="LISTACLIENTES" language="groovy" pageWidth="921" pageHeight="576" orientation="Landscape" columnWidth="919" leftMargin="2" rightMargin="0" topMargin="0" bottomMargin="0" uuid="210cb811-7454-400d-904b-74cefd11e819">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="143"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select * from dadosusuarios;]]>
+	</queryString>
+	<field name="usuario_id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="usuario_datacadastro" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="usuario_nome" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="endereco_logradouro" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="endereco_numero" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="endereco_bairro" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="endereco_complemento" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="endereco_referencia" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="endereco_municipio" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="endereco_cep" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="endereco_uf" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telefone_celular" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="email_particular" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="45" splitType="Stretch">
+			<staticText>
+				<reportElement x="169" y="0" width="253" height="45" uuid="d2dd2e3b-f7d0-4150-a20f-e24469c4b57f"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[Listagem de Clientes]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="67" height="20" uuid="32f8726b-43d7-4079-988d-7179c2b65daa"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[ID USUÁRIO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="67" y="0" width="90" height="20" uuid="e9303ef7-0a8f-4dd8-8dc6-14c06d75f141"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[DATA CADASTRO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="159" y="0" width="100" height="20" uuid="7dde3f05-c6de-4522-bbfd-3fe2bedacfef"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[NOME USUÁRIO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="259" y="0" width="74" height="20" uuid="c0ecd369-21a6-4779-99cc-7f5eed646b30"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[TELEFONE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="333" y="0" width="125" height="20" uuid="1ad87982-577f-4fb3-8c0e-adda5a614495"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[E-MAIL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="458" y="0" width="132" height="20" uuid="ace1d07e-7ec6-470f-a5b0-149878e140df"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[NOME RUA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="590" y="0" width="53" height="20" uuid="c088f584-59dd-46c4-9d11-784777673d89"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[NÚMERO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="643" y="0" width="114" height="20" uuid="bc5946fa-a2d4-4897-97de-825c23acad73"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[BAIRRO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="757" y="0" width="66" height="20" uuid="5fd5bc9d-c958-4539-ba02-337c5504a925"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[CEP]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="818" y="0" width="90" height="20" uuid="11c43834-e0ca-480b-a178-3f2fe774408c"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[CIDADE]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="67" height="20" uuid="6f73a24b-1f70-4a49-a65e-14a4491615fc"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{usuario_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="67" y="0" width="90" height="20" uuid="fae09085-3127-4a90-8fb0-f7f3d312282b"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{usuario_datacadastro}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="159" y="0" width="100" height="20" uuid="2452c933-2344-4e06-87a3-e6a9b6d0cd5a"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{usuario_nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="259" y="0" width="74" height="20" uuid="810684d1-032a-4131-b436-94d61c9960e3"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{telefone_celular}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="333" y="0" width="125" height="20" uuid="dd3958d3-e7e0-4f0f-ae58-b6e712d36568"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{email_particular}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="458" y="0" width="132" height="20" uuid="4699139b-5f9e-4188-8642-1f5837dc371f"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{endereco_logradouro}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="590" y="0" width="53" height="20" uuid="301aaecf-00f9-4bed-998c-7d6d6c1ce6fb"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{endereco_numero}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="643" y="0" width="114" height="20" uuid="2fadf8e1-f8c6-4964-a373-869eadf49603"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{endereco_bairro}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="757" y="0" width="68" height="20" uuid="87b3e02c-09ea-4b41-9a45-5672eb6faa1b"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{endereco_cep}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="825" y="0" width="82" height="20" uuid="ec5f2d45-a609-4ff1-873d-f980f09a28f7"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{endereco_municipio}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="808" y="34" width="100" height="20" uuid="9ff05003-5d5e-437f-b0f9-323275556d3c"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
